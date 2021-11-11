@@ -6,7 +6,7 @@ const app = express();
 app.use(cors());
 app.use(express.json())
 
-app.get("/fs", (req, res) => {
+app.post("/fs", (req, res) => {
     const filename = req.body.filename || "config.js";
     var editor = fs.createWriteStream(filename);
     if(!req.body.data){
