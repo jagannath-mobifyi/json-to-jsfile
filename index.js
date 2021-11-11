@@ -3,6 +3,7 @@ const express = require('express');
 const cors = require('cors');
 const PORT = 8080;
 const app = express();
+const fileBaseUrl = "https://files.jagan.cf/";
 app.use(cors());
 app.use(express.json())
 
@@ -26,7 +27,7 @@ app.post("/fs", (req, res) => {
 
     // Save everything and create file
     editor.end();
-    const file = __dirname + "/" + filename
+    const file = fileBaseUrl + filename
     console.log(file)
     res.send(file).status(200)
 })
