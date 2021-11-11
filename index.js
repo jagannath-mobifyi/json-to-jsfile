@@ -29,7 +29,10 @@ app.post("/fs", (req, res) => {
     editor.end();
     const file = fileBaseUrl + filename
     console.log(file)
-    res.send(file).status(200)
+    res.json({
+        data: file,
+        message: "Success!"
+    }).status(200)
 })
 
 app.listen(PORT, (err)=>{
